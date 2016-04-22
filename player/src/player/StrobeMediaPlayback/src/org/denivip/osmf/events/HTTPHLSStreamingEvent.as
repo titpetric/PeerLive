@@ -25,7 +25,7 @@ package org.denivip.osmf.events
 	import org.osmf.events.HTTPStreamingEventReason;
 	import org.osmf.net.httpstreaming.flv.FLVTagScriptDataMode;
 	import org.osmf.net.httpstreaming.flv.FLVTagScriptDataObject;
-	import org.denivip.osmf.net.httpstreaming.hls.HTTPPeerLiveDownloader;
+	import org.denivip.osmf.net.httpstreaming.hls.PeerLiveDownloader;
 
 	/**
 	 * @private
@@ -54,7 +54,7 @@ package org.denivip.osmf.events
 				url:String = null,
 				bytesDownloaded:uint = 0,
 				reason:String = HTTPStreamingEventReason.NORMAL,
-				downloader:HTTPPeerLiveDownloader = null
+				downloader:PeerLiveDownloader = null
 				)
 		{
 			super(type,
@@ -66,7 +66,7 @@ package org.denivip.osmf.events
 				url,
 				bytesDownloaded,
 				reason,
-				downloader);
+				downloader as HTTPStreamDownloader);
 		}
 	}
 }
