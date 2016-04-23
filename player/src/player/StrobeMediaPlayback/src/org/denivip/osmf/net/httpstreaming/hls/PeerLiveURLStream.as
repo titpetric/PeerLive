@@ -58,7 +58,6 @@ package org.denivip.osmf.net.httpstreaming.hls
 	{
 
 		private var myBytes:ByteArray = new ByteArray();
-		private var _bytesAvailable:uint;
 		private var _connected:Boolean;
 
 		public function PeerLiveURLStream() {
@@ -90,42 +89,49 @@ package org.denivip.osmf.net.httpstreaming.hls
 		override public function get connected ():Boolean {
 			ExternalInterface.call("console.log", "PeerLiveURLStream - connected called " + _connected);
 			//return connected
-			return super.connected;
+			return _connected;
 		}
 		
 		/// Returns the number of bytes of data available for reading in the input buffer.
 		override public function get bytesAvailable ():uint {
 			//ExternalInterface.call("console.log", "bytesAvailable called " + _bytesAvailable);
-			return super.bytesAvailable;
+			//return super.bytesAvailable;
 			//return _bytesAvailable;
+			return myBytes.bytesAvailable;
 		}
 
 		/// Immediately closes the stream and cancels the download operation.
 		override public function close ():void {
-			ExternalInterface.call("console.log", "PeerLiveURLStream - close called ");
-			super.close();
+			//ExternalInterface.call("console.log", "PeerLiveURLStream - close called ");
+			//super.close();
 		}
 
 		/// Begins downloading the URL specified in the request parameter.
 		override public function load (request:URLRequest):void {
-			ExternalInterface.call("console.log", "PeerLiveURLStream - Downloading " + request.url);
-//			_bytesAvailable = ExternalInterface.call("loadUrl", request.url);
-//			ExternalInterface.call("console.log", "PeerLiveURLStream - Downloaded " + _bytesAvailable);
-//			dispatchEvent(new Event(Event.OPEN));
-//			dispatchEvent(new ProgressEvent(ProgressEvent.PROGRESS, false, false, _bytesAvailable, _bytesAvailable));
-//			dispatchEvent(new Event(Event.COMPLETE));
-			super.load(request);
+			//ExternalInterface.call("console.log", "BenTVURLStream - load called " + request.url);
+			ExternalInterface.call("loadUrl", request.url);
+
+	        myBytes = Base64.decodeToByteArray(ExternalInterface.call("readBytes"));
+    	    myBytes.position = 0;
+
+			//ExternalInterface.call("console.log", "BenTVURLStream - Downloaded " + myBytes.bytesAvailable);
+			dispatchEvent(new Event(Event.OPEN));
+			dispatchEvent(new ProgressEvent(ProgressEvent.PROGRESS, false, false, myBytes.bytesAvailable, myBytes.bytesAvailable));
+			dispatchEvent(new Event(Event.COMPLETE));
 		}
+
+
+	    override public function readByte():int {
+	      return myBytes.readByte();
+	    }
+
+	    override public function readUnsignedShort():uint {
+	      return myBytes.readUnsignedShort();
+	    }
+
 		/// Reads length bytes of data from the stream.
 		override public function readBytes (bytes:ByteArray, offset:uint = 0, length:uint = 0):void {
-			ExternalInterface.call("console.log", "position: " + bytes.position + " bytes:" + bytes.toString());
-			//ExternalInterface.call("console.log", "PeerLiveURLStream - readBytes " + length + " " + offset);
-			super.readBytes(bytes, offset, length);
-			ExternalInterface.call("console.log", "position: " + bytes.position + " bytes:" + bytes.toString());
-//			myBytes = Base64.decodeToByteArray(ExternalInterface.call("readBytes"));
-//			bytes.writeObject(myBytes);
-//			//bytes.position = 0;
-//			ExternalInterface.call("console.log", myBytes.toString());
+			myBytes.readBytes(bytes, offset, length);
 		}
 	}
 }
