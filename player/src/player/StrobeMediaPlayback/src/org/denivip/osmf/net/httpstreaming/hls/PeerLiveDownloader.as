@@ -18,9 +18,8 @@ package org.denivip.osmf.net.httpstreaming.hls
 	import org.osmf.net.httpstreaming.HTTPStreamDownloader;
 	
 	import org.denivip.osmf.net.httpstreaming.hls.PeerLiveURLStream;
-	
-	import flash.external.ExternalInterface;
-	
+
+
 	CONFIG::LOGGING
 	{
 		import org.osmf.logging.Logger;
@@ -105,7 +104,7 @@ package org.denivip.osmf.net.httpstreaming.hls
 		 **/
 		public function open(request:URLRequest, dispatcher:IEventDispatcher, timeout:Number):void
 		{
-			ExternalInterface.call("console.log", "PeerLiveDownloader - Asking for " + request.url);
+
 			if (isOpen || (_urlStream != null && _urlStream.connected))
 				close();
 			
