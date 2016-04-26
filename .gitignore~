@@ -3,9 +3,6 @@ bin/
 bin-debug/
 bin-release/
 
-# node modules
-node_modules
-
 # Other files and folders
 .settings/
 
