@@ -2,11 +2,8 @@
 
 This plugin adds peer-to-peer powers for HTTP Live Streaming (HLS) transmissions on [Clappr Player](http://github.com/globocom/clappr).
 
-![BemTV P2PHLS](http://bem.tv/static/bemtv_live_preview.png)
-
 # Try it now!
 
-Visit [BemTV](http://bem.tv) with a [modern browser](http://caniuse.com/#search=webrtc) and try it by yourself. 
 
 # How to Use
 
@@ -33,9 +30,3 @@ Visit [BemTV](http://bem.tv) with a [modern browser](http://caniuse.com/#search=
     </script>
   </body>
 ```
-
-# Author
-
-[Flávio Ribeiro](https://www.linkedin.com/in/flavioribeiro) (flavio@bem.tv)
-
-![BemTV](http://bem.tv/static/bemtv_small_logo.png)
