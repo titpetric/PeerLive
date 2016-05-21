@@ -1,8 +1,8 @@
-PCDN
+PeerLive
 ====
 
 
-PCDN is an Peer to peer/P2P CDN for video based on an hybride solution
+PeerLive is an Peer to peer/P2P CDN for video based on an hybride solution
 
 It's work with **Peerjs** , **Videojs** and **WebRTC**.
 
@@ -10,16 +10,12 @@ It's a prof of concept so don't focus on the code quality.
 
 I hope you found it interresting and feel free to contact me 
 
-An example here [http://pcdn.jairagne.ovh](http://pcdn.jairagne.ovh)
-
 Riquirement 
 ==========
 
  - Videojs video player
  - Compatible Browsers
  - HLS video
-
-
 
 Client
 =====
@@ -60,11 +56,6 @@ key:peerjs
     $ npm install
     $ cd bin
     $ node peerjs --help
-
-
-Contact
-======
-Twitter : [@adelskott](https://twitter.com/adelskott)
 
 TODO
 ====
