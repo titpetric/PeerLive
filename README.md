@@ -6,9 +6,8 @@ PeerLive is an Peer to peer/P2P CDN for video based on an hybride solution
 
 It's work with **Peerjs** , **Videojs** and **WebRTC**.
 
-It's a prof of concept so don't focus on the code quality.
+It's a prof of concept.
 
-I hope you found it interresting and feel free to contact me 
 
 Riquirement 
 ==========
@@ -25,7 +24,7 @@ Copy past on your video page this code
     
     <script src="/js/apiCDNP2P.js"></script>
     <script>
-        apiCDNP2P({host:"peerjs.jairagne.ovh",port:"9000",key: 'peerjs',debug:3});
+        apiCDNP2P({host:"52.38.144.179",port:"9000",key: 'peerjs',debug:3});
     </script>
     
 Configuration:
@@ -39,14 +38,9 @@ Configuration:
 Server
 =====
 
-**PCDN server**
+**Peerjs server**
 
-My PCDN server is free to use. feel free to make your test on it.
-For production mode, my advice is to do it by yourself.
-Or use existing solution like Streemroot or Peer5 ....
-[good article here](http://blog.uppersideconferences.com/the-non-telecom-side-of-webrtc-data-channel/)
-
-host: pcdn.jairagne.ovh
+host:52.38.144.179
 port:9000
 key:peerjs
 
@@ -56,17 +50,4 @@ key:peerjs
     $ npm install
     $ cd bin
     $ node peerjs --help
-
-TODO
-====
-
- - Landing page for inactive users
- - Expose client API
- - Refactor code
- - Limit the client share to 5 
- - Replace Peejs to use a proper server with faye
- - Use a redis or Elasticsearch instead of memory storage
- - Create a server dashboard for stats
- - Automatic reconnection server
- - Too many failure bybass P2P
-
+    $ node peerjs --port 9000
