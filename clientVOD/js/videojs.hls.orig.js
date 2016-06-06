@@ -3220,6 +3220,7 @@ window.videojs.Hls.AacStream = function() {
    * @return {object} the XMLHttpRequest that was initiated.
    */
    videojs.Hls.xhr = function(url, callback) {
+    console.log("Enter to videojs.Hls.xhr (on videojs.hls.orig.js)");
     var
       options = {
         method: 'GET',

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PeerLive a P2P/CDN </title>
+	<!-- peer5 client library -->
+	<!--<script src="//api.peer5.com/peer5.js?id=49gzrvn9mxgd5wzbasrd"></script>-->
+
+	<script src="./peer5.js"></script>
+
+	<!-- videojs5 scripts - You can change to your self hosted scripts -->
+	<link rel="stylesheet" href="//api.peer5.com/videojs5/assets/video-js.min.css">
+	<script src="//api.peer5.com/videojs5.js"></script>
+
+	<!-- peer5 plugin for videojs5 -->
+	<script src="//api.peer5.com/peer5.videojs5.hlsjs.plugin.js"></script>
+</head>
+<body>
+
+	<video id="player" class="video-js vjs-default-skin" height="360" width="640" controls preload="none">
+	    <source src="https://wowza.peer5.com/live/smil:roxy.smil/playlist.m3u8" type="application/x-mpegURL" />
+	    <!--<source src="http://aztecalive-lh.akamaihd.net/i/0oxnvzh8a_1@175671/index_2_av-b.m3u8" type="">-->
+	</video>
+	<script>
+	    var player = videojs('#player');
+	</script>
+</body>
+</html>
