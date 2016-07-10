@@ -20,4 +20,5 @@ for channel in range(0,5):
 				print '%s: %s' % (channel, url)
 				break
 		except Exception as e:
+			print e
 			pass
