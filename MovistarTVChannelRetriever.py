@@ -10,7 +10,8 @@ BASE_URL = 'http://B%d.cdn.telefonica.com/%d/%s.m3u8'
 
 # Execution
 print 'Test'
-for channel in range(0,10):
+for channel in range(0,5):
+	print 'testing channel 1'
 	for host_number in range(MIN_RANGE, MAX_RANGE):
 		url = BASE_URL % (host_number, host_number, channel)
 		try: 
