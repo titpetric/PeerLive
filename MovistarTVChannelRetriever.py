@@ -9,6 +9,7 @@ BASE_URL = 'http://B%d.cdn.telefonica.com/%d/%s.m3u8'
 #				'CPLUSLG', 'MOVFUTBOL', 'CPLUSCHP', 'NTLG', 'NATGEOWILD', 'CPLUS1']
 
 # Execution
+print 'Test'
 for channel in range(0,10):
 	for host_number in range(MIN_RANGE, MAX_RANGE):
 		url = BASE_URL % (host_number, host_number, channel)
